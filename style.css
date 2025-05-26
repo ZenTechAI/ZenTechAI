@@ -1,0 +1,135 @@
+/* style.css */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f9f9fb;
+  color: #333;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header.header {
+  background-color: #0d1b2a;
+  color: #fff;
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header h1,
+.header p {
+  margin: 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.highlights {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #e8f0fe;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  font-weight: bold;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin: 0.5rem;
+  flex: 1 1 30%;
+  text-align: center;
+}
+
+.nav-blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.block {
+  background-color: #ffffff;
+  padding: 1.25rem;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.block:hover {
+  background-color: #e6f0ff;
+  transform: translateY(-2px);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.project-block {
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.project-block:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+footer.footer {
+  background-color: #0d1b2a;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .highlights {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .highlight {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .nav-blocks {
+    grid-template-columns: 1fr;
+  }
+}
