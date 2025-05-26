@@ -1,67 +1,98 @@
 /* style.css */
+:root {
+  --bg: #f8f9fc;
+  --primary: #4f46e5;
+  --accent: #6366f1;
+  --text: #1f2937;
+  --white: #fff;
+  --card-bg: #ffffffcc;
+  --shadow: rgba(0, 0, 0, 0.05);
+}
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-  background-color: #f9f9fb;
-  color: #333;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
 }
 
 a {
-  color: #0066cc;
+  color: var(--primary);
   text-decoration: none;
+  font-weight: 500;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-header.header {
-  background-color: #0d1b2a;
-  color: #fff;
-  padding: 1.5rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.header h1,
-.header p {
-  margin: 0;
-  text-align: center;
-}
-
 .container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem;
 }
 
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: var(--white);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Hero Section */
 .hero {
   text-align: center;
-  margin: 2rem 0;
+  padding: 2rem 1rem;
 }
 
+.hero h2 {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+/* Highlight Counters */
 .highlights {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0;
   flex-wrap: wrap;
-  background-color: #e8f0fe;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
 }
 
 .highlight {
-  font-weight: bold;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  margin: 0.5rem;
   flex: 1 1 30%;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow);
+  padding: 1.5rem;
   text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+  transition: transform 0.2s ease;
 }
 
+.highlight:hover {
+  transform: translateY(-4px);
+}
+
+/* Navigation Blocks */
 .nav-blocks {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -70,66 +101,69 @@ header.header {
 }
 
 .block {
-  background-color: #ffffff;
-  padding: 1.25rem;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--shadow);
+  padding: 1rem;
   text-align: center;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
   font-weight: 600;
-  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
 }
 
 .block:hover {
-  background-color: #e6f0ff;
+  border-color: var(--accent);
+  background: #f0f4ff;
   transform: translateY(-2px);
 }
 
+/* Portfolio Grid */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .project-block {
-  background-color: #fff;
+  background: var(--white);
+  border-radius: 10px;
   padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  box-shadow: 0 4px 12px var(--shadow);
   text-align: center;
-  transition: box-shadow 0.2s;
+  font-weight: 500;
+  transition: box-shadow 0.2s ease;
 }
 
 .project-block:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
 }
 
-footer.footer {
-  background-color: #0d1b2a;
+/* Footer */
+.footer {
+  background: #1f2937;
   color: #fff;
   text-align: center;
-  padding: 1rem 0;
+  padding: 2rem 1rem;
   margin-top: 3rem;
   font-size: 0.9rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
+/* Resume & Contact Pages */
 ul {
   padding-left: 1.5rem;
+  margin-top: 1rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .highlights {
     flex-direction: column;
-    align-items: center;
   }
 
   .highlight {
     width: 100%;
-    margin: 0.5rem 0;
-  }
-
-  .nav-blocks {
-    grid-template-columns: 1fr;
+    margin-bottom: 1rem;
   }
 }
