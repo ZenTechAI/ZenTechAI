@@ -324,12 +324,11 @@ Navbar Section
   width: fit-content;
 }
 /*** 
-.BrandLogo,
-.badge-item .item {
-  max-height: 50px; /* Limits logo height */
+.BrandLogo {
+  max-height: 50px; /* Or increase this to 60–70px */
   height: auto;
   width: auto;
-  display: block;   /* Ensures spacing behaves properly */
+  object-fit: contain; /* Keep aspect ratio */
 }
 ====================================================================
 Hero Section
