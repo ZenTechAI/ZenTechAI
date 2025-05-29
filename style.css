@@ -323,12 +323,14 @@ Navbar Section
 .nav-right {
   width: fit-content;
 }
+/*** 
 .BrandLogo,
 .badge-item .item {
-  height: 100px;
+  max-height: 50px; /* Limits logo height */
+  height: auto;
+  width: auto;
+  display: block;   /* Ensures spacing behaves properly */
 }
-/*** 
-
 ====================================================================
 Hero Section
 ====================================================================
